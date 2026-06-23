@@ -6,7 +6,7 @@ from telegram.handler import handle_telegram_update
 app = Flask(__name__)
 
 
-@app.route("/vk", methods=["POST"])
+@app.route("/vkontakte", methods=["POST"])
 def vk_webhook():
     data = request.get_json()
 
