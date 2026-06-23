@@ -1,11 +1,11 @@
-from telegram.client import send_to_telegram
+from tg_adapter.client import send_to_telegram
 
 vk_to_tg_map = {
     123: 456789
 }
 
 def route_message(msg):
-    if msg["platform"] == "vkontakte":
+    if msg["platform"] == "vk_adapter":
         tg_chat = vk_to_tg_map.get(msg["chat_id"])
 
         if not tg_chat:

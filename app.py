@@ -1,12 +1,12 @@
 from flask import Flask, request, jsonify
 
-from vkontakte.handler import handle_vkontakte_update
-from telegram.handler import handle_telegram_update
+from vk_adapter.handler import handle_vkontakte_update
+from tg_adapter.handler import handle_telegram_update
 
 app = Flask(__name__)
 
 
-@app.route("/vkontakte", methods=["POST"])
+@app.route("/vk_adapter", methods=["POST"])
 def vk_webhook():
     data = request.get_json()
 
@@ -23,7 +23,7 @@ def vk_webhook():
     return "ok"
 
 
-@app.route("/telegram", methods=["POST"])
+@app.route("/tg_adapter", methods=["POST"])
 def telegram_webhook():
     data = request.get_json()
 
