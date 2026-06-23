@@ -1,2 +1,2 @@
-def handle_vk_update(data):
+def handle_vkontakte_update(data):
     print(data)

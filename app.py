@@ -1,12 +1,12 @@
 from flask import Flask, request, jsonify
 
-from vkontakte.handler import handle_vk_update
+from vkontakte.handler import handle_vkontakte_update
 from telegram.handler import handle_telegram_update
 
 app = Flask(__name__)
 
 
-@app.route("/vkontakte", methods=["POST"])
+@app.route("/vk", methods=["POST"])
 def vk_webhook():
     data = request.get_json()
 
@@ -15,10 +15,10 @@ def vk_webhook():
 
     # optional: VK confirmation handshake
     if data.get("type") == "confirmation":
-        return "your_confirmation_code_here"
+        return "47204d18"
 
     # dispatch VK event to handler
-    handle_vk_update(data)
+    handle_vkontakte_update(data)
 
     return "ok"
 
